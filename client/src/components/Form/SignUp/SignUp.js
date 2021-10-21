@@ -34,9 +34,9 @@ class SignUp extends React.Component {
         email: this.state.email,
         password: this.state.password
       }).then(res => {
-        // this.setState({
-        //   redirect: true
-        // });
+        this.setState({
+          redirect: true
+        });
         console.log(res);
       }).catch(err => {
         console.log(err);

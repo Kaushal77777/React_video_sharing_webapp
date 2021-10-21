@@ -1,3 +1,5 @@
 module.exports={
-    port : 7777
+    secret: '',
+    port : 7777,
+
 }

@@ -13,7 +13,7 @@ class SignIn extends React.Component {
       email: '',
       password: '',
       token: '',
-     // redirect: localStorage.getItem('userTokenTime') ? true : false
+      redirect: localStorage.getItem('userTokenTime') ? true : false
     }
 
     this.onSubmitHandler = this.onSubmitHandler.bind(this);
@@ -22,23 +22,24 @@ class SignIn extends React.Component {
   }
 
   onSubmitHandler() {
+    
     if (!(this.state.email === '' || this.state.password === '')
       && (/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(this.state.email))) {
       axios.post('/api/signIn', {
         email: this.state.email,
         password: this.state.password
       }).then(res => {
-        // this.setState({
-        //   token: res.data.token
-        // });
-        // const data = {
-        //   token: this.state.token,
-        //   time: new Date().getTime()
-        // }
-        // localStorage.setItem('userTokenTime', JSON.stringify(data));
-        // this.setState({
-        //   redirect: true
-        // });
+        this.setState({
+          token: res.data.token
+        });
+        const data = {
+          token: this.state.token,
+          time: new Date().getTime()
+        }
+        localStorage.setItem('userTokenTime', JSON.stringify(data));
+        this.setState({
+          redirect: true
+        });
         console.log(res);
       }).catch(err => {
         console.log(err);
