@@ -37,8 +37,10 @@ class SignUp extends React.Component {
         this.setState({
           redirect: true
         });
+        alert('SignUp Successfully now you can login');
         console.log(res);
       }).catch(err => {
+        alert('Please enter valid details');
         console.log(err);
       });
     } else {
@@ -71,7 +73,7 @@ class SignUp extends React.Component {
   }
 
   render() {
-    // if (this.state.redirect) return <Redirect to='/' />
+    if (this.state.redirect) return <Redirect to='/' />
     return (
       <Form onSubmit={this.onSubmitHandler.bind(this)}>
         <h3 className="text-center text-info">Register</h3>
