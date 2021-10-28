@@ -1,5 +1,6 @@
 .video{
   position: relative;
+  margin: 37px 0px;
 }
 .video-thumbnail img {
     width: 100%;

@@ -48,6 +48,11 @@ class Upload extends React.Component {
 
   fileUploadHandler(event) {
     const data = new FormData();
+    if(this.state.selectedVideos == null)
+    {
+      alert("Please select a file");
+      return <Redirect to='/'  />
+    }
     for (let i = 0; i < this.state.selectedVideos.length; i++) {
       data.append('file', this.state.selectedVideos[i]);
     }

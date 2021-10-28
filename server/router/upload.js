@@ -33,25 +33,3 @@ router.post('/', upload.single('file'), (req, res, next) => {
 });
 
 module.exports = router;
-
-
-// req.userData =
-// {
-//   userId: '5e83510e372d514944a3a20d',
-//   firstName: 'chirayu',
-//   lastName: 'joshi',
-//   email: 'chirayu@gmail.com',
-//   iat: 1585686822,
-//   exp: 1585690422
-// }
-// req.file = 
-// {
-//   fieldname: 'file',
-//   originalname: '1. Module Introduction.mp4',
-//   encoding: '7bit',
-//   mimetype: 'video/mp4',
-//   destination: 'media/uploads/',
-//   filename: '1._Module_Introduction.mp4',
-//   path: 'media/uploads/1._Module_Introduction.mp4',
-//   size: 1078934
-// }
